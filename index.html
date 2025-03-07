@@ -4,183 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShakingTaste</title>
-    
-    <style>
-            @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dosis:wght@200..800&family=Sigmar&display=swap');
-
-        body {
-            font-family: Caveat;
-            background-color: #fff5f8;
-            margin: 0;
-            padding: 0;
-        }
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #d81b60;
-            color: white;
-            padding: 20px;
-        }
-        .header {
-            font-size: 36px;
-            font-weight: bold;
-        }
-        .logo img {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-        }
-
-        
-        .details {
-            font-size: 20px;
-            color: #444;
-        }
-        .nav {
-            background: #f8bbd0;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .nav a {
-            text-decoration: none;
-            color: #d81b60;
-            font-size: 22px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .nav a:hover {
-            color: #880e4f;
-        }
-        .intro-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        .intro {
-            flex: 1;
-            color: #d81b60;
-            font-size: 18px;
-            text-align: left;
-            padding-right: 20px;
-        }
-        .intro-container img {
-            width: 400px;
-            border-radius: 15px;
-            max-width: 100%;
-        }
-        .menu {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        .item {
-            background: white;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-            width: 280px;
-            transition: transform 0.3s;
-            text-align: center;
-        }
-
-        .item h3, 
-        .item p {
-            text-align: center;
-}
-
-        .item:hover {
-            transform: scale(1.05);
-        }
-        .item img {
-            width: 45%;
-            height: 50%;
-            border-radius: 15px;
-            display: block;
-            margin: 0 auto;
-        }
-        .button {
-            background-color: #d81b60;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-size: 16px;
-            display: block;
-            margin: 10px auto;
-            text-align: center;
-        }
-        .button:hover {
-            background-color: #880e4f;
-        }
-        .footer {
-            background: #d81b60;
-            color: white;
-            padding: 20px;
-            margin-top: 40px;
-            text-align: center;
-            font-size: 24px;
-        }
-
-        .bubble {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: floatUp linear infinite;
-        }
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh);
-                opacity: 0;
-            }
-        }
-        
-    </style>
-
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block" />
+    <script type="text./javascript" src="chocolate.js" defer></script>
 </head>
-
-    <script>
-        function createBubble() {
-            const bubble = document.createElement("div");
-            bubble.classList.add("bubble");
-            document.body.appendChild(bubble);
-
-            const size = Math.random() * 60 + 20;
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-
-            bubble.style.left = `${Math.random() * 100}vw`;
-            bubble.style.animationDuration = `${Math.random() * 5 + 3}s`;
-
-            setTimeout(() => {
-                bubble.remove();
-            }, 8000);
-        }
-
-        setInterval(createBubble, 500);
-    </script>
-
 <body>
     <div class="header-container">
         <div class="header">ShakingTaste</div>
@@ -197,9 +24,9 @@
     <div class="intro-container" id="home">
         <div class="intro">
             <h1>Welcome to Luxury Milkshake Shop</h1>
-                <div class="details">
-                    <h2>Indulge in the finest handcrafted milkshakes made with premium ingredients. Our shop is dedicated to delivering an exquisite and creamy experience in every sip.</h2>
-                </div>
+            <div class="details">
+                <h2>Indulge in the finest handcrafted milkshakes made with premium ingredients. Our shop is dedicated to delivering an exquisite and creamy experience in every sip.</h2>
+            </div>
         </div>
         <img src="./Pictures/Main/SBmain.jpg" alt="Milkshake Shop">
     </div>
@@ -231,6 +58,12 @@
         <p>Phone: (123) 456-7890</p>
         <p>Address: 123 Sweet Street, Dessert City</p>
     </div>
+    
+    <header>
+        <button id="theme-switch">
+            <span class="material-symbols-outlined">join_right</span>
+        </button>
+    </header>
 
 </body>
 </html>
