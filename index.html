@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Milkshake Shop</title>
+    <title>ShakingTaste</title>
     
     <style>
             @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dosis:wght@200..800&family=Sigmar&display=swap');
@@ -23,24 +23,31 @@
             padding: 20px;
         }
         .header {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: bold;
         }
         .logo img {
-            width: 80px;
-            height: auto;
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        
+        .details {
+            font-size: 20px;
+            color: #444;
         }
         .nav {
             background: #f8bbd0;
             padding: 10px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             gap: 20px;
         }
         .nav a {
             text-decoration: none;
             color: #d81b60;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -59,12 +66,12 @@
         }
         .intro {
             flex: 1;
-            color: #444;
+            color: #d81b60;
             font-size: 18px;
             text-align: left;
             padding-right: 20px;
         }
-        .intro img {
+        .intro-container img {
             width: 400px;
             border-radius: 15px;
             max-width: 100%;
@@ -83,13 +90,23 @@
             box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
             width: 280px;
             transition: transform 0.3s;
+            text-align: center;
         }
+
+        .item h3, 
+        .item p {
+            text-align: center;
+}
+
         .item:hover {
             transform: scale(1.05);
         }
         .item img {
-            width: 100%;
+            width: 45%;
+            height: 50%;
             border-radius: 15px;
+            display: block;
+            margin: 0 auto;
         }
         .button {
             background-color: #d81b60;
@@ -100,6 +117,9 @@
             cursor: pointer;
             margin-top: 10px;
             font-size: 16px;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
         }
         .button:hover {
             background-color: #880e4f;
@@ -110,56 +130,107 @@
             padding: 20px;
             margin-top: 40px;
             text-align: center;
+            font-size: 24px;
         }
+
+        .bubble {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: floatUp linear infinite;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+        
     </style>
+
 </head>
+
+    <script>
+        function createBubble() {
+            const bubble = document.createElement("div");
+            bubble.classList.add("bubble");
+            document.body.appendChild(bubble);
+
+            const size = Math.random() * 60 + 20;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.animationDuration = `${Math.random() * 5 + 3}s`;
+
+            setTimeout(() => {
+                bubble.remove();
+            }, 8000);
+        }
+
+        setInterval(createBubble, 500);
+    </script>
+
 <body>
     <div class="header-container">
-        <div class="header">Luxury Milkshake Shop</div>
+        <div class="header">ShakingTaste</div>
         <div class="logo">
-            <img src="https://source.unsplash.com/80x80/?milkshake-logo" alt="Milkshake Logo">
+            <img src="./Pictures/Logo/Logo.png" alt="Milkshake Logo">
         </div>
     </div>
     <div class="nav">
-        <a href="#home"><i class="fas fa-home"></i> Home</a>
-        <a href="#menu"><i class="fas fa-utensils"></i> Menu</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="#home"><i class="fas-fa-home"></i> Home</a>
+        <a href="#menu"><i class="fas-fa-utensils"></i> Menu</a>
+        <a href="#contact"><i class="fas-fa-envelope"></i> Contact</a>
     </div>
     
     <div class="intro-container" id="home">
         <div class="intro">
-            <h2>Welcome to Luxury Milkshake Shop</h2>
-            <p>Indulge in the finest handcrafted milkshakes made with premium ingredients. Our shop is dedicated to delivering an exquisite and creamy experience in every sip.</p>
+            <h1>Welcome to Luxury Milkshake Shop</h1>
+                <div class="details">
+                    <h2>Indulge in the finest handcrafted milkshakes made with premium ingredients. Our shop is dedicated to delivering an exquisite and creamy experience in every sip.</h2>
+                </div>
         </div>
-        <img src="SBmain.jpg" alt="Milkshake Shop">
+        <img src="./Pictures/Main/SBmain.jpg" alt="Milkshake Shop">
     </div>
     
     <div class="menu" id="menu">
         <div class="item">
-            <img src="https://source.unsplash.com/280x280/?milkshake" alt="Strawberry Milkshake1">
-            <h3>Strawberry Milkshake</h3>
-            <p>$4.99</p>
+            <img src="./Pictures/StrawberryMilkshake/SBmilkshake1.png" alt="Strawberry Milkshake1">
+            <h2>Strawberry Milkshake</h2>
+            <h1>$4.99</h1>
             <button class="button">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="https://source.unsplash.com/280x280/?chocolate-milkshake" alt="Strawberry Milkshake2">
-            <h3>Chocolate Milkshake</h3>
-            <p>$5.49</p>
+            <img src="./Pictures/StrawberryMilkshake/SBmilkshake2.png" alt="Strawberry Milkshake2">
+            <h2>Chocolate Milkshake</h2>
+            <h1>$5.49</h1>
             <button class="button">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="https://source.unsplash.com/280x280/?vanilla-milkshake" alt="Strawberry Milkshake3">
-            <h3>Vanilla Milkshake</h3>
-            <p>$4.79</p>
+            <img src="./Pictures/StrawberryMilkshake/SBmilkshake3.png" alt="Strawberry Milkshake3">
+            <h2>Vanilla Milkshake</h2>
+            <h1>$4.79</h1>
             <button class="button">Add to Cart</button>
         </div>
     </div>
     
     <div class="footer" id="contact">
-        <h3>Contact Us</h3>
+        <h1>Contact Us</h1>
         <p>Email: contact@milkshakeshop.com</p>
         <p>Phone: (123) 456-7890</p>
         <p>Address: 123 Sweet Street, Dessert City</p>
     </div>
+
 </body>
 </html>
