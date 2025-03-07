@@ -15,6 +15,10 @@
     --ButtonPress: #3a170d;
 }
 
+.hidden {
+    display: none !important;
+}
+
 body {
     font-family: Caveat;
     background-color: var(--ColorFontW);
@@ -37,8 +41,8 @@ body {
 }
 
 .logo img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
 }
 
@@ -99,6 +103,19 @@ body {
     padding: 20px;
 }
 
+.inner-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item img {
+    height: 250px;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+}
+
 .item {
     background: var(--ColorFontW);
     margin: 15px;
@@ -119,13 +136,6 @@ body {
     transform: scale(1.05);
 }
 
-.item img {
-    width: 45%;
-    height: 50%;
-    border-radius: 15px;
-    display: block;
-    margin: 0 auto;
-}
 
 .button {
     background-color: var(--BackgroundHead);
