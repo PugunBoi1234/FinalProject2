@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Milkshake Shop</title>
+    
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dosis:wght@200..800&family=Sigmar&display=swap');
+
+        body {
+            font-family: Caveat;
+            background-color: #fff5f8;
+            margin: 0;
+            padding: 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d81b60;
+            color: white;
+            padding: 20px;
+        }
+        .header {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
+        .nav {
+            background: #f8bbd0;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #d81b60;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .nav a:hover {
+            color: #880e4f;
+        }
+        .intro-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .intro {
+            flex: 1;
+            color: #444;
+            font-size: 18px;
+            text-align: left;
+            padding-right: 20px;
+        }
+        .intro img {
+            width: 400px;
+            border-radius: 15px;
+            max-width: 100%;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .item {
+            background: white;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+            width: 280px;
+            transition: transform 0.3s;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .button {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #880e4f;
+        }
+        .footer {
+            background: #d81b60;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="header">Luxury Milkshake Shop</div>
+        <div class="logo">
+            <img src="https://source.unsplash.com/80x80/?milkshake-logo" alt="Milkshake Logo">
+        </div>
+    </div>
+    <div class="nav">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#menu"><i class="fas fa-utensils"></i> Menu</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+    
+    <div class="intro-container" id="home">
+        <div class="intro">
+            <h2>Welcome to Luxury Milkshake Shop</h2>
+            <p>Indulge in the finest handcrafted milkshakes made with premium ingredients. Our shop is dedicated to delivering an exquisite and creamy experience in every sip.</p>
+        </div>
+        <img src="SBmain.jpg" alt="Milkshake Shop">
+    </div>
+    
+    <div class="menu" id="menu">
+        <div class="item">
+            <img src="https://source.unsplash.com/280x280/?milkshake" alt="Strawberry Milkshake1">
+            <h3>Strawberry Milkshake</h3>
+            <p>$4.99</p>
+            <button class="button">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="https://source.unsplash.com/280x280/?chocolate-milkshake" alt="Strawberry Milkshake2">
+            <h3>Chocolate Milkshake</h3>
+            <p>$5.49</p>
+            <button class="button">Add to Cart</button>
+        </div>
+        <div class="item">
+            <img src="https://source.unsplash.com/280x280/?vanilla-milkshake" alt="Strawberry Milkshake3">
+            <h3>Vanilla Milkshake</h3>
+            <p>$4.79</p>
+            <button class="button">Add to Cart</button>
+        </div>
+    </div>
+    
+    <div class="footer" id="contact">
+        <h3>Contact Us</h3>
+        <p>Email: contact@milkshakeshop.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Address: 123 Sweet Street, Dessert City</p>
+    </div>
+</body>
+</html>
