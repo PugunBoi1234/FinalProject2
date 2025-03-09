@@ -13,7 +13,11 @@ const enableChocolatemode = () => {
     document.body.classList.add('chocolatemode')
     StrawberryMenu.classList.add('hidden')
     ChocolateMenu.classList.remove('hidden')
-    MainImage.src = "./Pictures/Main/CCmain.jpg"
+
+    MainImages.forEach((img, index) => {
+      img.src = index === 0 ? "./Pictures/Main/CCmain.jpg" : "./Pictures/Main/CCmain2.jpg"
+  })
+
     document.cookie = "chocolatemode=active"
 }
 
@@ -21,7 +25,11 @@ const disableChocolatemode = () => {
     document.body.classList.remove('chocolatemode')
     ChocolateMenu.classList.add('hidden')
     StrawberryMenu.classList.remove('hidden')
-    MainImage.src = "./Pictures/Main/SBmain.jpg"
+    
+    MainImages.forEach((img, index) => {
+      img.src = index === 0 ? "./Pictures/Main/SBmain.jpg" : "./Pictures/Main/SBmain2.jpg"
+  })
+
     document.cookie = "chocolatemode=null"
 }
 

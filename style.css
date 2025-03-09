@@ -3,7 +3,8 @@
 :root{
     --BackgroundHead: #d81b60;
     --BackgroundOption: #f8bbd0;
-    --ColorFontW: #fff5f8;
+    --ColorFontW: #ffe9f0;
+    --ColorTable: white;
     --ColorFontG: #444;
     --ButtonPress: #880e4f;
 }
@@ -26,9 +27,14 @@ body {
     padding: 0;
 }
 
+.white-space {
+    width: 100%; /* ให้แถบกว้างเต็ม */
+    height: 50px; /* ปรับความสูงตามต้องการ */
+    background-color: var(--ColorFontW); /* ตั้งค่าสีขาว */
+}
+
 .header-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: var(--BackgroundHead);
     color: white;
@@ -36,8 +42,14 @@ body {
 }
 
 .header {
-    font-size: 36px;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 72px;
     font-weight: bold;
+}
+
+.logo {
+    flex-shrink: 0;
 }
 
 .logo img {
@@ -46,18 +58,41 @@ body {
     object-fit: contain;
 }
 
+
 .details {
     font-size: 20px;
     color: var(--ColorFontG);
 }
 
+.details ul {
+    list-style-type: none; /* เอาจุดกลมหน้าข้อออก */
+    padding: 0;
+}
+
+.details li {
+    margin-bottom: 12px; /* เพิ่มระยะห่างระหว่างข้อ */
+    font-size: 22px; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
+    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัดให้ดูอ่านง่าย */
+}
+
+.details strong {
+    color: var(--BackgroundHead); /* เปลี่ยนสีข้อความหัวข้อให้โดดเด่น */
+    font-size: 24px; /* ทำให้หัวข้อแต่ละข้อใหญ่ขึ้นอีกหน่อย */
+}
+
 .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: var(--BackgroundOption);
     padding: 10px;
     display: flex;
     justify-content: center;
     gap: 20px;
+    z-index: 1;
 }
+
 
 .nav a {
     text-decoration: none;
@@ -96,6 +131,121 @@ body {
     max-width: 100%;
 }
 
+.history-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.history {
+    flex: 1;
+    color: var(--BackgroundHead);
+    font-size: 18px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.history-container img {
+    width: 400px;
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+.pros-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.pros {
+    flex: 1;
+    color: var(--BackgroundHead);
+    font-size: 18px;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.pros-container img {
+    width: 400px;
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+.exp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.exp {
+    flex: 1;
+    color: var(--BackgroundHead);
+    font-size: 18px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.exp-container img {
+    width: 400px;
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+.sig-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.sig {
+    flex: 1;
+    color: var(--BackgroundHead);
+    font-size: 18px;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.sig-container img {
+    width: 400px;
+    border-radius: 15px;
+    max-width: 100%;
+}
+
+.why-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.why {
+    flex: 1;
+    color: var(--BackgroundHead);
+    font-size: 18px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.why-container img {
+    width: 400px;
+    border-radius: 15px;
+    max-width: 100%;
+}
+
 .menu {
     display: flex;
     justify-content: center;
@@ -104,20 +254,21 @@ body {
 }
 
 .inner-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr); /* 3 คอลัมน์ต่อแถว */
+    gap: 20px; /* ระยะห่างระหว่างไอเท็ม */
+    justify-items: center;
 }
 
 .item img {
     height: 250px;
     border-radius: 15px;
     display: block;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .item {
-    background: var(--ColorFontW);
+    background: var(--ColorTable);
     margin: 15px;
     padding: 15px;
     border-radius: 15px;
@@ -125,6 +276,7 @@ body {
     width: 280px;
     transition: transform 0.3s;
     text-align: center;
+    z-index: 0;
 }
 
 .item h3, 
@@ -136,6 +288,11 @@ body {
     transform: scale(1.05);
 }
 
+.check {
+    font-size: 100px;
+    text-align: center;
+    color: var(--BackgroundHead)
+}
 
 .button {
     background-color: var(--BackgroundHead);
@@ -144,11 +301,9 @@ body {
     padding: 12px;
     border-radius: 6px;
     cursor: pointer;
-    margin-top: 10px;
     font-size: 16px;
-    display: block;
-    margin: 10px auto;
-    text-align: center;
+    display: center;
+    position: relative;
 }
 
 .button:hover {
@@ -192,4 +347,64 @@ body {
 
 .chocolatemode #theme-switch svg:last-child{
     display:block;
+}
+
+.newsletter-container {
+    background-color: var(--BackgroundOption);
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-container h2 {
+    font-size: 40px;
+    color: var(--BackgroundHead);
+    margin-bottom: 10px;
+}
+
+.newsletter-container p {
+    font-size: 30px;
+    color: var(--BackgroundHead);
+    margin-bottom: 20px;
+}
+
+.newsletter-container form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.newsletter-container input[type="email"] {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid var(--BackgroundHead);
+    border-radius: 6px;
+    width: 250px;
+    outline: none;
+}
+
+.newsletter-container input[type="email"]:focus {
+    border-color: var(--ButtonPress);
+}
+
+.subscribe-btn {
+    background-color: var(--BackgroundHead);
+    color: var(--ColorFontW);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.subscribe-btn:hover {
+    background-color: var(--ButtonPress);
+}
+
+.material-symbols-outlined {
+    margin-right: 10px;  /* ระยะห่างระหว่างไอคอนและข้อความ */
+    vertical-align: middle;  /* ให้ไอคอนอยู่ตรงกลางของข้อความ */
 }
