@@ -2,7 +2,7 @@
 
 :root{
     --BackgroundHead: #d81b60;
-    --BackgroundOption: #f8bbd0;
+    --BackgroundOption: #f8bbd0d7;
     --ColorFontW: #ffe9f0;
     --ColorTable: white;
     --ColorFontG: #444;
@@ -10,7 +10,7 @@
 }
 .chocolatemode{
     --BackgroundHead: #5c2f27;
-    --BackgroundOption: #c3883d;
+    --BackgroundOption: #c3883dd7;
     --ColorFontW: #f6edce;
     --ColorFontG: #c3883d;
     --ButtonPress: #3a170d;
@@ -28,9 +28,9 @@ body {
 }
 
 .white-space {
-    width: 100%; /* ให้แถบกว้างเต็ม */
-    height: 50px; /* ปรับความสูงตามต้องการ */
-    background-color: var(--ColorFontW); /* ตั้งค่าสีขาว */
+    width: 100%;
+    height: 50px;
+    background-color: var(--ColorFontW);
 }
 
 .header-container {
@@ -65,19 +65,19 @@ body {
 }
 
 .details ul {
-    list-style-type: none; /* เอาจุดกลมหน้าข้อออก */
+    list-style-type: none;
     padding: 0;
 }
 
 .details li {
-    margin-bottom: 12px; /* เพิ่มระยะห่างระหว่างข้อ */
-    font-size: 22px; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
-    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัดให้ดูอ่านง่าย */
+    margin-bottom: 12px;
+    font-size: 22px;
+    line-height: 1.5;/
 }
 
 .details strong {
-    color: var(--BackgroundHead); /* เปลี่ยนสีข้อความหัวข้อให้โดดเด่น */
-    font-size: 24px; /* ทำให้หัวข้อแต่ละข้อใหญ่ขึ้นอีกหน่อย */
+    color: var(--BackgroundHead);
+    font-size: 24px;
 }
 
 .nav {
@@ -108,7 +108,7 @@ body {
     color: var(--ButtonPress);
 }
 
-.intro-container {
+.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,30 +117,38 @@ body {
     margin: auto;
 }
 
-.intro {
+
+#theme-switch{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--BackgroundHead);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    
+    z-index: 2;
+}
+
+#theme-switch span {
+    margin: 0;
+    font-size: 30px;
+    color: var(--ColorFontW);
+}
+
+.container .left {
     flex: 1;
     color: var(--BackgroundHead);
     font-size: 18px;
     text-align: left;
-    padding-right: 20px;
+    padding-left: 20px;
 }
 
-.intro-container img {
-    width: 400px;
-    border-radius: 15px;
-    max-width: 100%;
-}
-
-.history-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.history {
+.container .right {
     flex: 1;
     color: var(--BackgroundHead);
     font-size: 18px;
@@ -148,99 +156,7 @@ body {
     padding-right: 20px;
 }
 
-.history-container img {
-    width: 400px;
-    border-radius: 15px;
-    max-width: 100%;
-}
-
-.pros-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.pros {
-    flex: 1;
-    color: var(--BackgroundHead);
-    font-size: 18px;
-    text-align: left;
-    padding-right: 20px;
-}
-
-.pros-container img {
-    width: 400px;
-    border-radius: 15px;
-    max-width: 100%;
-}
-
-.exp-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.exp {
-    flex: 1;
-    color: var(--BackgroundHead);
-    font-size: 18px;
-    text-align: right;
-    padding-right: 20px;
-}
-
-.exp-container img {
-    width: 400px;
-    border-radius: 15px;
-    max-width: 100%;
-}
-
-.sig-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.sig {
-    flex: 1;
-    color: var(--BackgroundHead);
-    font-size: 18px;
-    text-align: left;
-    padding-right: 20px;
-}
-
-.sig-container img {
-    width: 400px;
-    border-radius: 15px;
-    max-width: 100%;
-}
-
-.why-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.why {
-    flex: 1;
-    color: var(--BackgroundHead);
-    font-size: 18px;
-    text-align: right;
-    padding-right: 20px;
-}
-
-.why-container img {
+.container img {
     width: 400px;
     border-radius: 15px;
     max-width: 100%;
@@ -255,8 +171,8 @@ body {
 
 .inner-menu {
     display: grid;
-    grid-template-columns: repeat(3, 3fr); /* 3 คอลัมน์ต่อแถว */
-    gap: 20px; /* ระยะห่างระหว่างไอเท็ม */
+    grid-template-columns: repeat(3, 3fr);
+    gap: 20px;
     justify-items: center;
 }
 
@@ -319,36 +235,6 @@ body {
     font-size: 24px;
 }
 
-#theme-switch{
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--BackgroundHead);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-
-#theme-switch svg{
-    fill: var(--BackgroundHead);
-}
-
-#theme-switch svg:last-child{
-    display: none;
-}
-
-.chocolatemode #theme-switch svg:first-child{
-    display:none;
-}
-
-.chocolatemode #theme-switch svg:last-child{
-    display:block;
-}
-
 .newsletter-container {
     background-color: var(--BackgroundOption);
     padding: 20px;
@@ -405,6 +291,6 @@ body {
 }
 
 .material-symbols-outlined {
-    margin-right: 10px;  /* ระยะห่างระหว่างไอคอนและข้อความ */
-    vertical-align: middle;  /* ให้ไอคอนอยู่ตรงกลางของข้อความ */
+    margin-right: 10px;
+    vertical-align: middle;
 }

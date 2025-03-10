@@ -1,47 +1,54 @@
-// We make cookies !!! 🍪🍪🍪🍪🍪🍪
-// We also have a theme switcher for the chocolate mode 🍫🍫🍫🍫🍫🍫
-
 let chocolatemode = getCookie('chocolatemode')
 
 let StrawberryMenu = document.getElementById('strawberry-menu')
 let ChocolateMenu = document.getElementById('chocolate-menu')
-let MainImage = document.getElementById('main-image')
+let MainImage = document.getElementsByClassName('main-image')
 
-const themeSwitch = document.getElementById('theme-switch')
+let themeSwitch = document.getElementById('theme-switch')
+
+const switchMainImages = (theme) => {
+  var mainImageDirectory = `Pictures/Main/`
+  var chocolateFiles = [
+    'CCmain.jpg',
+    'CCmain2.jpg',
+    'CCmain3.jpg',
+    'CCmain4.jpg',
+    'CCmain5.jpg',
+    'CCmain6.jpg',
+  ]
+  var strawberryFiles = [
+    'SBmain.jpg',
+    'SBmain2.jpg',
+    'SBmain3.jpg',
+    'SBmain4.jpg',
+    'SBmain5.jpg',
+    'SBmain6.jpg',
+  ]
+  for (let i = 0; i < MainImage.length; i++) {
+    MainImage[i].src = `${mainImageDirectory}${theme === 'chocolate' ? chocolateFiles[i] : strawberryFiles[i]}`
+  }
+}
 
 const enableChocolatemode = () => {
-    document.body.classList.add('chocolatemode')
-    StrawberryMenu.classList.add('hidden')
-    ChocolateMenu.classList.remove('hidden')
+  document.body.classList.add('chocolatemode')
+  StrawberryMenu.classList.add('hidden')
+  ChocolateMenu.classList.remove('hidden')
 
-    MainImages.forEach((img, index) => {
-      img.src = index === 0 ? "./Pictures/Main/CCmain.jpg" : "./Pictures/Main/CCmain2.jpg"
-  })
+  switchMainImages('chocolate')
 
-    document.cookie = "chocolatemode=active"
+  document.cookie = "chocolatemode=active"
 }
 
 const disableChocolatemode = () => {
+  console.log(document.body.classList)
+  if (document.body.classList.contains('chocolatemode'))
     document.body.classList.remove('chocolatemode')
-    ChocolateMenu.classList.add('hidden')
-    StrawberryMenu.classList.remove('hidden')
-    
-    MainImages.forEach((img, index) => {
-      img.src = index === 0 ? "./Pictures/Main/SBmain.jpg" : "./Pictures/Main/SBmain2.jpg"
-  })
+  ChocolateMenu.classList.add('hidden')
+  StrawberryMenu.classList.remove('hidden')
 
-    document.cookie = "chocolatemode=null"
+  switchMainImages('strawberry')
+  document.cookie = "chocolatemode=null"
 }
-
-if(chocolatemode === "active") 
-    enableChocolatemode() 
-else 
-    disableChocolatemode()
-
-themeSwitch.addEventListener("click", () => {
-    chocolatemode = getCookie('chocolatemode')
-    chocolatemode !== "active" ? enableChocolatemode() : disableChocolatemode()
-})
 
 function getCookie(cname) {
     let name = cname + "=";
@@ -58,3 +65,18 @@ function getCookie(cname) {
     }
     return "";
   }
+
+document.addEventListener('DOMContentLoaded', () => {
+  StrawberryMenu = document.getElementById('strawberry-menu')
+  ChocolateMenu = document.getElementById('chocolate-menu')
+  themeSwitch = document.getElementById('theme-switch')
+  if(chocolatemode === "active") 
+    enableChocolatemode() 
+  else 
+    disableChocolatemode()
+
+  themeSwitch.addEventListener("click", () => {
+      chocolatemode = getCookie('chocolatemode')
+      chocolatemode !== "active" ? enableChocolatemode() : disableChocolatemode()
+  })
+})
